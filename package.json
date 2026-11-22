@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "homepage": "https://github.com/joel-dev213/Administration-portal#readme",
+  "homepage": "https://joel-dev213.github.io/Administration-portal/",
   "bugs": {
     "url": "https://github.com/joel-dev213/Administration-portal/issues"
   },
@@ -18,9 +18,11 @@
   "scripts": {
     "dev": "vite",
     "server": "json-server db.json --port 3001",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -37,6 +39,7 @@
     "eslint": "^10.14.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
+    "gh-pages": "^6.3.0",
     "globals": "^17.13.0",
     "json-server": "^1.0.0-beta.15",
     "vite": "^8.3.6"

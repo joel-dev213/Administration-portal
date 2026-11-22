@@ -36,7 +36,7 @@ function App() {
             <>
                <Navigation />
                 <Header />
-                <ProductForm />
+                <ProductForm onAddProduct={handleAddProduct} />
               <ProductPage
                 products={products}
                 onDeleteProduct={handleDeleteProduct}

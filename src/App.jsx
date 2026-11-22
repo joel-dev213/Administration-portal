@@ -29,13 +29,14 @@ function App() {
 
   return (
     <>
-      <Navigation />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header />
+               <Navigation />
+                <Header />
+                <ProductForm />
               <ProductPage
                 products={products}
                 onDeleteProduct={handleDeleteProduct}

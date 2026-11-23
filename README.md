@@ -76,6 +76,14 @@ This runs `json-server` on `http://localhost:3001`. The product form posts new p
 | `npm run lint` | Run ESLint |
 | `npm run preview` | Preview the production build locally |
 
+## Deployment
+
+The site is published to GitHub Pages at <https://joel-dev213.github.io/Administration-portal/>.
+
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which installs dependencies, builds the app, and publishes `dist/` automatically. In the repository settings, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions** for this workflow to publish.
+
+For a one-off manual publish from a local machine, run `npm run deploy`, which builds the app and pushes `dist/` to the `gh-pages` branch.
+
 ## Routes
 
 | Path | Page |

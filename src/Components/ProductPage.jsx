@@ -1,22 +1,14 @@
 // Display and Search
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ProductList from "./ProductList";
 
-function ProductPage({ products, onDeleteProduct, onEditProduct }) {
+function ProductPage({ products, onDeleteProduct }) {
     const [searchTerm, setSearchTerm] = useState("");
-    
+    const navigate = useNavigate();
 
     function handleEditClick(productToEdit) {
-        const name = window.prompt("Product name", productToEdit.name);
-        if (name === null) return;
-
-        const price = window.prompt("Product price", String(productToEdit.price));
-        if (price === null) return;
-
-        const parsedPrice = Number(price);
-        if (!Number.isFinite(parsedPrice)) return;
-
-        onEditProduct({ ...productToEdit, name, price: parsedPrice });
+        navigate(`/edit-product/${productToEdit.id}`);
     }
 
     // Dynamic product search

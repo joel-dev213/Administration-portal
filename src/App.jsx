@@ -40,7 +40,6 @@ function App() {
               <ProductPage
                 products={products}
                 onDeleteProduct={handleDeleteProduct}
-                onEditProduct={handleEditProduct}
               />
             </>
           }
@@ -51,13 +50,27 @@ function App() {
             <ProductPage
               products={products}
               onDeleteProduct={handleDeleteProduct}
-              onEditProduct={handleEditProduct}
             />
           }
         />
         <Route
           path="/add-product"
-          element={<ProductForm onAddProduct={handleAddProduct} />}
+          element={
+            <ProductForm
+              products={products}
+              onAddProduct={handleAddProduct}
+            />
+          }
+        />
+        <Route
+          path="/edit-product/:id"
+          element={
+            <ProductForm
+              products={products}
+              onAddProduct={handleAddProduct}
+              onEditProduct={handleEditProduct}
+            />
+          }
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -46,6 +46,9 @@ function ProductCard({ product, onDeleteProduct, onEditProduct }) {
                         {inStock ? "In Stock" : "Sold Out"}
                     </span>
                 </div>
+                <div className="rounded-full font-semibold">
+                    <p>{product.category}</p>
+                </div>
 
                 <div className="flex items-center justify-between text-sm text-slate-600">
                     <span> Stock: {product.stock}</span>
